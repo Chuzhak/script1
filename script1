@@ -1,5 +1,10 @@
 #!/bin/bash
 
+if [ -z "$1" ]; then
+  echo "Error"
+  exit 1
+fi
+
 echo "Create $1"
 
 DIR="$1"
