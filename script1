@@ -1,0 +1,15 @@
+#!/bin/bash
+
+echo '12345'
+echo $0
+echo $1
+echo $2
+
+DIR="$1"
+
+if [ ! -d "$DIR" ]; then
+  mkdir $DIR
+fi
+
+touch $DIR/file1
+touch $DIR/file2
