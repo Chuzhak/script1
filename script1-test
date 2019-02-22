@@ -1,0 +1,36 @@
+#!/bin/bash
+
+DIR='test123'
+
+if [ -d "$DIR" ]; then
+  rm -rf $DIR
+fi
+
+./script1 $DIR > /dev/null
+
+# echo $?
+
+ERR=""
+
+if [ ! -d "$DIR" ]; then
+  echo "$DIR not found"
+  ERR="yes"
+fi
+
+if [ ! -f "$DIR/file1" ]; then
+  echo "$DIR/file1 not found"
+  ERR="yes"
+fi
+
+if [ ! -f "$DIR/file2" ]; then
+  echo "$DIR/file2 not found"
+  ERR="yes"
+fi
+
+if [ -z $ERR ]; then
+  echo "OK"
+fi
+
+if [ -d "$DIR" ]; then
+  rm -rf $DIR
+fi
