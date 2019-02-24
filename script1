@@ -5,13 +5,24 @@ if [ -z "$1" ]; then
   exit 1
 fi
 
+if [ -z "$2" ]; then
+  echo "Error"
+  exit 2
+fi
+
 echo "Create $1"
+echo "Create $2"
 
 DIR="$1"
+DIR2="$2"
 
 if [ ! -d "$DIR" ]; then
   mkdir $DIR
 fi
 
+if [ ! -d "$DIR2" ]; then
+  mkdir $DIR2
+fi
+
 touch $DIR/file1
-touch $DIR/file2
+touch $DIR2/file2
